@@ -1,3 +1,4 @@
+// classes 
 class ItemList {
   constructor() {
     this.items = [];
@@ -20,3 +21,32 @@ document.getElementById('btn').onclick = function() {
 }
 
 console.log(ItemList.sum(1,4));
+
+
+// array operations
+const arr = [1, 1, 2, 3, 5, 8, 13];
+
+const map = arr.map(function(item) {
+  return item + 1;
+});
+console.log(map);
+
+const mapWithIndex = arr.map(function(item, index) {
+  return item + index;
+});
+console.log(mapWithIndex);
+
+const sum = arr.reduce(function(total, next) {
+  return total + next;
+});
+console.log(sum);
+
+const filter = arr.filter(function(item) {
+  return item % 2 === 0;
+});
+console.log(filter);
+
+const find = arr.find(function(item) {
+  return item === 3;
+});
+console.log(find);
