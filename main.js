@@ -158,3 +158,6 @@ const shortUser = {
   company: 'XPTO'
 }
 console.log(shortUser);
+
+// template literals
+console.log(`Name: ${userName}, age: ${userAge}`);

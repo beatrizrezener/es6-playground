@@ -198,4 +198,6 @@ var shortUser = {
   userAge: userAge,
   company: 'XPTO'
 };
-console.log(shortUser);
+console.log(shortUser); // template literals
+
+console.log("Name: ".concat(userName, ", age: ").concat(userAge));
