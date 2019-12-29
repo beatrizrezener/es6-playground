@@ -1,0 +1,4 @@
+{
+  // understand which environment is being used to best code conversion
+  "presets": ["@babel/preset-env"]
+}
