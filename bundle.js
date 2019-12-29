@@ -21,10 +21,13 @@ function () {
     value: function addItem() {
       this.items.push('New item');
       console.log(this.items);
-    }
+    } // default values
+
   }], [{
     key: "sum",
-    value: function sum(a, b) {
+    value: function sum() {
+      var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
       return a + b;
     }
   }]);
@@ -38,7 +41,8 @@ document.getElementById('btn').onclick = function () {
   myItemList.addItem();
 };
 
-console.log(ItemList.sum(1, 4)); // array operations
+console.log(ItemList.sum(1, 4));
+console.log(ItemList.sum(8)); // array operations
 
 var arr = [1, 1, 2, 3, 5, 8, 13];
 var map = arr.map(function (item) {

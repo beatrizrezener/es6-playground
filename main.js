@@ -9,7 +9,8 @@ class ItemList {
     console.log(this.items);
   }  
 
-  static sum(a, b) {
+  // default values
+  static sum(a = 1, b = 2) {
     return a + b;
   }
 }
@@ -21,7 +22,7 @@ document.getElementById('btn').onclick = function() {
 }
 
 console.log(ItemList.sum(1,4));
-
+console.log(ItemList.sum(8));
 
 // array operations
 const arr = [1, 1, 2, 3, 5, 8, 13];
