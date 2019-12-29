@@ -135,7 +135,6 @@ const totalPop = data.reduce((total, next) => {
 console.log(totalPop);
 
 // spread
-
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
 const arr3 = [...arr1, ...arr2]
@@ -150,3 +149,12 @@ const user1 = {
 const user2 = { ...user1, name: 'John' }
 console.log(user2);
 
+// object short syntax
+const userName = 'Mariah';
+const userAge = 26;
+const shortUser = {
+  userName,
+  userAge,
+  company: 'XPTO'
+}
+console.log(shortUser);

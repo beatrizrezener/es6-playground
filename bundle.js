@@ -189,4 +189,13 @@ var user2 = _objectSpread({}, user1, {
   name: 'John'
 });
 
-console.log(user2);
+console.log(user2); // object short syntax
+
+var userName = 'Mariah';
+var userAge = 26;
+var shortUser = {
+  userName: userName,
+  userAge: userAge,
+  company: 'XPTO'
+};
+console.log(shortUser);
