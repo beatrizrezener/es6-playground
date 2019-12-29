@@ -65,6 +65,7 @@ console.log(arrowFunctionReturningObject());
 // destructing
 const user = {
   name: 'Mariah',
+  lastName: 'Motta',
   age: '45',
   address: {
     city: 'Brasilia',
@@ -81,3 +82,71 @@ function showName({ name, age }) {
   console.log(name, age);
 }
 showName(user);
+
+// rest operator
+const { lastName, ...rest } = user;
+console.log(lastName);
+console.log(rest);
+
+const [ a, b, ...c ] = arr;
+console.log(a);
+console.log(b);
+console.log(c);
+
+function sumWithRestOperatorParam(...params) {
+  return params.reduce((total, next) => total + next);
+}
+console.log(sumWithRestOperatorParam(1, 2, 3, 4));
+
+const initialValue = 0;
+function anotherSumWithRestOperatorParam(a, ...params) {
+  console.log(params);
+  return params.reduce((acc, cur) => { 
+
+    console.log(acc, cur, cur * a);
+    return acc + cur * a
+  }, initialValue);
+}
+console.log(anotherSumWithRestOperatorParam(2, 2, 3, 4));
+
+let data = [
+  {
+    country: 'China',
+    pop: 1409517397,
+  },
+  {
+    country: 'India',
+    pop: 1339180127,
+  },
+  {
+    country: 'USA',
+    pop: 324459463,
+  },
+  {
+    country: 'Indonesia',
+    pop: 263991379,
+  }
+]
+
+const totalPop = data.reduce((total, next) => {
+  return next.country === 'China' ? total : total + next.pop;
+}, initialValue);
+
+console.log(totalPop);
+
+// spread
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [...arr1, ...arr2]
+console.log(arr3);
+
+const user1 = {
+  name: 'Mariah',
+  age: '28',
+  company: 'xpto',
+}
+
+const user2 = { ...user1, name: 'John' }
+console.log(user2);
+
