@@ -50,3 +50,13 @@ const find = arr.find(function(item) {
   return item === 3;
 });
 console.log(find);
+
+// arrow function
+const newMap = arr.map(item => item + 2);
+console.log(newMap);
+
+const arrowFunction = () => 'arrowFunction';
+console.log(arrowFunction());
+
+const arrowFunctionReturningObject = () => ({ name: 'Mariah' });
+console.log(arrowFunctionReturningObject());

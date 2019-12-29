@@ -60,4 +60,23 @@ console.log(filter);
 var find = arr.find(function (item) {
   return item === 3;
 });
-console.log(find);
+console.log(find); // arrow function
+
+var newMap = arr.map(function (item) {
+  return item + 2;
+});
+console.log(newMap);
+
+var arrowFunction = function arrowFunction() {
+  return 'arrowFunction';
+};
+
+console.log(arrowFunction());
+
+var arrowFunctionReturningObject = function arrowFunctionReturningObject() {
+  return {
+    name: 'Mariah'
+  };
+};
+
+console.log(arrowFunctionReturningObject());
