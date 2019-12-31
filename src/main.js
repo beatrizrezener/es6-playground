@@ -1,35 +1,15 @@
-const myPromise = () => new Promise((resolve, reject) => {
-  setTimeout(() => {resolve('OK')}, 2000);
-});
+import axios from 'axios';
 
-// # then
-// myPromise().then(response => {
-//   console.log(response);
-
-//   myPromise().then(response => {
-//     console.log(response);
-    
-//       myPromise().then(response => {
-//         console.log(response);
-//       });
-//   });
-// });
-
-// # async await
-async function runPromisse() {
-  const response = await myPromise();
-  console.log(response);
-  console.log(await myPromise());
-  console.log(await myPromise());
+class API {
+  static async getUserInfo(username) {
+    try {
+      const response = await(axios.get(`https://api.github.com/users/${username}`));
+      console.log(response);
+    } catch (err) {
+      console.warn(`Fail to request user:\n${err}`);
+    }
+  }
 }
 
-// # arrow function
-// const runPromisse = async () => {
-//   const response = await myPromise();
-//   console.log(response);
-//   console.log(await myPromise());
-//   console.log(await myPromise());
-// }
-
-
-runPromisse();
+API.getUserInfo('beatrizrezener');
+API.getUserInfo('232ewdfsd');
