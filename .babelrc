@@ -1,4 +1,7 @@
 {
   // understand which environment is being used to best code conversion
-  "presets": ["@babel/preset-env"]
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    "@babel/plugin-transform-async-to-generator"
+  ]
 }

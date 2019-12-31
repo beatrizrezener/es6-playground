@@ -1,8 +1,35 @@
-import * as functions from './examples/functions';
-import sum, { sub } from './examples/functions';
+const myPromise = () => new Promise((resolve, reject) => {
+  setTimeout(() => {resolve('OK')}, 2000);
+});
 
-console.log(sum(1, 2));
-console.log(sub(3, 2));
+// # then
+// myPromise().then(response => {
+//   console.log(response);
 
-console.log(functions.default(1,2));
-console.log(functions.prod(1,2));
+//   myPromise().then(response => {
+//     console.log(response);
+    
+//       myPromise().then(response => {
+//         console.log(response);
+//       });
+//   });
+// });
+
+// # async await
+async function runPromisse() {
+  const response = await myPromise();
+  console.log(response);
+  console.log(await myPromise());
+  console.log(await myPromise());
+}
+
+// # arrow function
+// const runPromisse = async () => {
+//   const response = await myPromise();
+//   console.log(response);
+//   console.log(await myPromise());
+//   console.log(await myPromise());
+// }
+
+
+runPromisse();
