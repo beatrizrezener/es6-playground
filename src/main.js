@@ -22,20 +22,38 @@ class App {
 
     if(repoInput.length === 0) return;
 
-    const response = await api.get(`/repos/${repoInput}`);
+    this.setLoading();
 
-    const { name, description, html_url, owner: { avatar_url } } = response.data;
+    try {
+      const response = await api.get(`/repos/${repoInput}`);
 
-    this.repositories.push({
-      name,
-      description,
-      avatar_url,
-      html_url,
-    });
-    
-    this.inputElement.value = '';
+      const { name, description, html_url, owner: { avatar_url } } = response.data;
 
-    this.render();
+      this.repositories.push({
+        name,
+        description,
+        avatar_url,
+        html_url,
+      });
+      
+      this.inputElement.value = '';
+
+      this.render();
+    } catch (err) {
+      alert('Invalid repository');
+    }
+    this.setLoading(false);
+  }
+
+  setLoading(loading = true) {
+    if (loading) {
+      let loadingElement = document.createElement('span');
+      loadingElement.appendChild(document.createTextNode('Loading...'));
+      loadingElement.setAttribute('id', 'loading');
+      this.formElement.appendChild(loadingElement);
+    } else {
+      document.getElementById('loading').remove();
+    }
   }
 
   render() {
