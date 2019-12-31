@@ -90,11 +90,11 @@
 /*!*******************************!*\
   !*** ./examples/functions.js ***!
   \*******************************/
-/*! exports provided: sum */
+/*! exports provided: default, sub, prod */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\nfunction sum(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./examples/functions.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return sum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sub\", function() { return sub; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"prod\", function() { return prod; });\nfunction sum(a, b) {\n  return a + b;\n}\nfunction sub(a, b) {\n  return a - b;\n}\nfunction prod(a, b) {\n  return a * b;\n}\n\n//# sourceURL=webpack:///./examples/functions.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _examples_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./examples/functions */ \"./examples/functions.js\");\n\nconsole.log(Object(_examples_functions__WEBPACK_IMPORTED_MODULE_0__[\"sum\"])(1, 2));\n\n//# sourceURL=webpack:///./main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _examples_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./examples/functions */ \"./examples/functions.js\");\n\n\nconsole.log(Object(_examples_functions__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(1, 2));\nconsole.log(Object(_examples_functions__WEBPACK_IMPORTED_MODULE_0__[\"sub\"])(3, 2));\nconsole.log(_examples_functions__WEBPACK_IMPORTED_MODULE_0__[\"default\"](1, 2));\nconsole.log(_examples_functions__WEBPACK_IMPORTED_MODULE_0__[\"prod\"](1, 2));\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ })
 
