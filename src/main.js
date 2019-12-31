@@ -2,7 +2,8 @@ class App {
   constructor() {
     this.repositories = [];
 
-    this.formElement= document.getElementById('repo-form');
+    this.formElement = document.getElementById('repo-form');
+    this.listElement = document.getElementById('repo-list');
     this.registerHandlers();
   }
 
@@ -18,7 +19,34 @@ class App {
       avatar_url: 'https://avatars2.githubusercontent.com/u/3225662?s=400&v=4',
       html_url: 'http://github.com/beatrizrezener',
     });
-    console.log(this.repositories);
+    
+    this.render();
+  }
+
+  render() {
+    this.listElement.innerHTML = '';
+    this.repositories.forEach(repo => {
+      let imgElement = document.createElement('img'); // scope variable
+      imgElement.setAttribute('src', repo.avatar_url);
+      
+      let nameElement = document.createElement('strong');
+      nameElement.appendChild(document.createTextNode(repo.name));
+
+      let descriptionElement = document.createElement('p');
+      descriptionElement.appendChild(document.createTextNode(repo.description));
+
+      let linkElement = document.createElement('a');
+      linkElement.setAttribute('targe', '_blank');
+      linkElement.appendChild(document.createTextNode('Repository Link'));
+
+      let listItemElement = document.createElement('li');
+      listItemElement.appendChild(imgElement);
+      listItemElement.appendChild(nameElement);
+      listItemElement.appendChild(descriptionElement);
+      listItemElement.appendChild(linkElement);
+
+      this.listElement.appendChild(listItemElement);
+    });
   }
 }
 
